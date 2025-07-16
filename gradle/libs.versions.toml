@@ -29,6 +29,9 @@ adapter-rxjava3 = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", 
 rxandroid = { group = "io.reactivex.rxjava3", name = "rxandroid", version = "3.0.2" }
 rxkotlin = { group = "io.reactivex.rxjava3", name = "rxkotlin", version = "3.0.1" }
 
+livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version = "2.5.1" }
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version = "1.5.5" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

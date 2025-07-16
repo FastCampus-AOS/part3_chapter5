@@ -56,6 +56,9 @@ dependencies {
     implementation(libs.rxandroid)
     implementation(libs.rxkotlin)
 
+    implementation(libs.livedata.ktx)
+    implementation(libs.fragment.ktx)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
