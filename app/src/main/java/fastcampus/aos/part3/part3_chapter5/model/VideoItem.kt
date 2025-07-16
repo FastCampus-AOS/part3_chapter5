@@ -14,4 +14,4 @@ data class VideoItem(
     @SerializedName("author") val author: String,
     @SerializedName("datetime") override val dateTime: Date,
     override var isFavorite: Boolean
-) : ListItem
+) : ListItem()

@@ -1,5 +1,6 @@
 package fastcampus.aos.part3.part3_chapter5.list
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -37,6 +38,11 @@ class ListAdapter : ListAdapter<ListItem, RecyclerView.ViewHolder>(diffUtil) {
         } else {
             (holder as VideoViewHolder).bind(item)
         }
+    }
+
+    override fun submitList(list: List<ListItem?>?) {
+        Log.d("hyunsu Adapter", "submitList called with ${list?.size ?: 0} items")
+        super.submitList(list)
     }
 
     companion object {

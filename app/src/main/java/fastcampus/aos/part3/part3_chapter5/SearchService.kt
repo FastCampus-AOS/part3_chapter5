@@ -16,6 +16,7 @@ interface SearchService {
     ): Observable<ImageListResponse>
 
     @Headers("Authorization: KakaoAK a0dda720719d1a77f7271e39f20d88e4")
+    @GET("vclip")
     fun searchVideo(
         @Query("query") query: String
     ): Observable<VideoListResponse>

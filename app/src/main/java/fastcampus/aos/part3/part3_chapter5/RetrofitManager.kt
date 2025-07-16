@@ -27,5 +27,5 @@ object RetrofitManager {
         .client(okHttpClient)
         .build()
 
-    val searchService: SearchService by lazy {  retrofit.create(SearchService::class.java) }
+    val searchService: SearchService by lazy { retrofit.create(SearchService::class.java) }
 }

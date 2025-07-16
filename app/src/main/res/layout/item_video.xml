@@ -22,7 +22,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:scaleType="centerCrop"
-            app:image="@{item.thumbnailUrl"
+            app:image="@{item.thumbnailUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -70,12 +70,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@{item.author"
+            android:text="@{item.author}"
             app:layout_constraintStart_toStartOf="@id/playTimeTextView"
             app:layout_constraintTop_toBottomOf="@id/playTimeTextView" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            favorite="@{item.favorite"
+            app:favorite="@{item.favorite}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

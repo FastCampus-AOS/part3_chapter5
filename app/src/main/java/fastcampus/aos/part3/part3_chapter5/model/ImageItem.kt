@@ -13,5 +13,5 @@ data class ImageItem(
     @SerializedName("display_sitename") val siteName: String,
     @SerializedName("doc_url") val docUrl: String,
     @SerializedName("datetime") override val dateTime: Date,
-    override var isFavorite: Boolean = false
-) : ListItem
+    override var isFavorite: Boolean
+) : ListItem()
