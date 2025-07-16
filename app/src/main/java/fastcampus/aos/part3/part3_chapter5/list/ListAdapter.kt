@@ -2,7 +2,6 @@ package fastcampus.aos.part3.part3_chapter5.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import fastcampus.aos.part3.part3_chapter5.model.ListItem
