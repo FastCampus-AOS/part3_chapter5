@@ -37,6 +37,9 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -58,6 +61,9 @@ dependencies {
 
     implementation(libs.livedata.ktx)
     implementation(libs.fragment.ktx)
+
+    testImplementation(libs.mockito)
+    testImplementation(libs.core.testing)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
