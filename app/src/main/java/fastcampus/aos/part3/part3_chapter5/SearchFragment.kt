@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import fastcampus.aos.part3.part3_chapter5.databinding.FragmentSearchBinding
+import fastcampus.aos.part3.part3_chapter5.list.ItemHandler
 import fastcampus.aos.part3.part3_chapter5.list.ListAdapter
+import fastcampus.aos.part3.part3_chapter5.model.ListItem
 import fastcampus.aos.part3.part3_chapter5.repository.SearchRepositoryImpl
 
 class SearchFragment : Fragment() {
@@ -18,7 +20,7 @@ class SearchFragment : Fragment() {
         SearchViewModel.SearchViewModelFactory(SearchRepositoryImpl(RetrofitManager.searchService))
     }
     private var binding: FragmentSearchBinding? = null
-    private val adapter by lazy { ListAdapter() }
+    private val adapter by lazy { ListAdapter(Handler(viewModel)) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,7 +65,13 @@ class SearchFragment : Fragment() {
                 }
             }
 
-            adapter.submitList(it)
+            adapter.submitList(it.sortedBy { it.dateTime })
+        }
+    }
+
+    class Handler(private val viewModel: SearchViewModel): ItemHandler {
+        override fun onClickFavorite(item: ListItem) {
+            viewModel.toggleFavorite(item)
         }
     }
 }

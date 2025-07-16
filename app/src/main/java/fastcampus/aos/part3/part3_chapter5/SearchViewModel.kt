@@ -5,7 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import fastcampus.aos.part3.part3_chapter5.model.ImageItem
 import fastcampus.aos.part3.part3_chapter5.model.ListItem
+import fastcampus.aos.part3.part3_chapter5.model.VideoItem
 import fastcampus.aos.part3.part3_chapter5.repository.SearchRepository
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
@@ -37,6 +39,32 @@ class SearchViewModel(
                 _listLiveData.value = emptyList()
             })
         )
+    }
+
+    fun toggleFavorite(item: ListItem) {
+        _listLiveData.value = _listLiveData.value?.map {
+            if (it == item) {
+                when (it) {
+                    is ImageItem -> {
+                        it.copy(isFavorite = !it.isFavorite)
+                    }
+                    is VideoItem -> {
+                        it.copy(isFavorite = !it.isFavorite)
+                    }
+                    else -> {
+                        it
+                    }
+                }.also { changeItem ->
+                    if (Common.favoriteList.contains(item)) {
+                        Common.favoriteList.remove(item)
+                    } else {
+                        Common.favoriteList.add(changeItem)
+                    }
+                }
+            } else {
+                it
+            }
+        }
     }
 
     override fun onCleared() {

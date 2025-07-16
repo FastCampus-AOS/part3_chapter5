@@ -7,6 +7,10 @@
         <variable
             name="item"
             type="fastcampus.aos.part3.part3_chapter5.model.VideoItem" />
+
+        <variable
+            name="handler"
+            type="fastcampus.aos.part3.part3_chapter5.list.ItemHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -75,12 +79,13 @@
             app:layout_constraintTop_toBottomOf="@id/playTimeTextView" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            app:favorite="@{item.favorite}"
+            android:id="@+id/favoriteImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onClickFavorite(item)}"
+            app:favorite="@{item.favorite}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
