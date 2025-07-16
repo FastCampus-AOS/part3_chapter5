@@ -52,6 +52,10 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.coil)
 
+    implementation(libs.adapter.rxjava3)
+    implementation(libs.rxandroid)
+    implementation(libs.rxkotlin)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
